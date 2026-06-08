@@ -19,6 +19,11 @@
       "titulo": "Planeación Financiera",
       "descripcion": "Planifica tu futuro financiero...",
       "imagen": "/images/4.jpg"
+    },
+    {
+      "titulo": "prueba sitio",
+      "descripcion": "prueba sitio",
+      "imagen": "/images/5.jpg"
     }
   ]
 }
