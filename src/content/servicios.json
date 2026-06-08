@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "titulo": "Declaraciones",
+      "descripcion": "Presentamos tus impuestos...",
+      "imagen": "/images/1.jpg"
+    },
+    {
+      "titulo": "Asesoría Fiscal",
+      "descripcion": "Te ayudamos a tomar decisiones...",
+      "imagen": "/images/2.jpg"
+    },
+    {
+      "titulo": "Contabilidad",
+      "descripcion": "Llevamos el control...",
+      "imagen": "/images/3.jpg"
+    },
+    {
+      "titulo": "Planeación Financiera",
+      "descripcion": "Planifica tu futuro financiero...",
+      "imagen": "/images/4.jpg"
+    }
+  ]
+}

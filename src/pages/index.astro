@@ -1,0 +1,243 @@
+---
+import "../styles/global.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import hero from "../content/hero.json";
+import servicios from "../content/servicios.json";
+import equipo from "../content/equipo.json";
+import nosotros from "../content/nosotros.json";
+import ubicacion from "../content/ubicacion.json";
+import contacto from "../content/contacto.json";
+
+if (typeof window !== "undefined") {
+	setTimeout(() => {
+		AOS.init({
+			duration: 1000,
+			once: true,
+		});
+	}, 100);
+}
+---
+
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Despacho Contable</title>
+	</head>
+	<body class="bg-[#f8f5f2] text-gray-800">
+		<!-- NAVBAR -->
+		<nav
+			class="w-full bg-white shadow-md fixed top-0 left-0 z-50 backdrop-blur-md"
+		>
+			<!-- navbar fijo -->
+			<div
+				class="max-w-6xl mx-auto flex justify-between items-center p-4"
+			>
+				<h1 class="font-bold text-[#6b4f3b] text-lg">Despacho DAVI</h1>
+				<!-- color café -->
+
+				<div class="space-x-6 font-medium">
+					<a href="#servicios" class="hover:text-[#6b4f3b] transition"
+						>Servicios</a
+					>
+					<a href="#nosotros" class="hover:text-[#6b4f3b] transition"
+						>Nosotros</a
+					>
+					<a href="#contacto" class="hover:text-[#6b4f3b] transition"
+						>Contacto</a
+					>
+				</div>
+			</div>
+		</nav>
+		<!-- HERO -->
+		<section
+			class="relative h-screen flex items-center justify-center text-center pt-20"
+		>
+			<!-- IMAGEN -->
+			<img
+				src={hero.imagen}
+				class="absolute w-full h-full object-cover top-0 left-0"
+			/>
+
+			<!-- OVERLAY -->
+			<div class="absolute w-full h-full bg-black/50"></div>
+
+			<!-- CONTENIDO -->
+			<div class="relative z-10 text-white max-w-2xl px-4">
+				<h1 class="text-5xl font-bold mb-4">
+					{hero.titulo}
+				</h1>
+
+				<p class="text-lg mb-6">
+					{hero.descripcion}
+				</p>
+
+				<a
+					href="https://wa.me/5210000000000"
+					class="bg-[#6b4f3b] px-6 py-3 rounded-lg shadow hover:bg-[#5a3f2e] transition transform hover:scale-105"
+				>
+					Contáctanos
+				</a>
+			</div>
+		</section>
+		<!-- TRÁMITES -->
+		<section class="py-20 bg-[#f1ece8] text-center">
+			<!-- fondo suave -->
+			<h2 class="text-3xl font-bold mb-10 text-[#6b4f3b]">
+				Trámites e Información
+			</h2>
+
+			<div class="max-w-4xl mx-auto space-y-6 px-4">
+				<details
+					class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition"
+				>
+					<summary class="font-bold text-lg cursor-pointer"
+						>Inscripción al RFC</summary
+					>
+					<p class="mt-4 text-gray-700">
+						El Registro Federal de Contribuyentes (RFC) es
+						necesario...
+					</p>
+				</details>
+
+				<details
+					class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition"
+				>
+					<summary class="font-bold text-lg cursor-pointer"
+						>Declaración anual</summary
+					>
+					<p class="mt-4 text-gray-700">
+						Es un reporte que deben presentar...
+					</p>
+				</details>
+			</div>
+		</section>
+		<!-- SERVICIOS -->
+		<section id="servicios" class="py-20 bg-white text-center">
+			<h2 class="text-3xl font-bold mb-10 text-[#6b4f3b]">
+				Nuestros Servicios
+			</h2>
+
+			<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+				{
+					servicios.items.map((s) => (
+						<div class="p-6 rounded-xl shadow hover:shadow-2xl transition transform hover:-translate-y-2 text-center">
+							<img src={s.imagen} class="w-16 mx-auto mb-4" />
+							<h3 class="font-bold text-xl mb-2">{s.titulo}</h3>
+							<p class="text-gray-600">{s.descripcion}</p>
+						</div>
+					))
+				}
+			</div>
+		</section>
+		<!-- NOSOTROS -->
+		<section id="nosotros" class="py-20 bg-[#f8f5f2]">
+			<div
+				class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-4"
+			>
+				<!-- IMAGEN -->
+				<img src={nosotros.imagen} class="rounded-xl shadow-lg" />
+
+				<!-- TEXTO -->
+				<div>
+					<h2 class="text-3xl font-bold mb-4 text-[#6b4f3b]">
+						{nosotros.titulo}
+					</h2>
+
+					<p class="text-gray-600 mb-4">
+						{nosotros.descripcion}
+					</p>
+
+					<ul class="space-y-2 text-gray-700">
+						{nosotros.valores.map((v) => <li>✔ {v}</li>)}
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- EQUIPO -->
+		<section class="py-20 bg-white text-center">
+			<h2 class="text-3xl font-bold mb-10 text-[#6b4f3b]">
+				Nuestro equipo
+			</h2>
+
+			<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+				{
+					equipo.map((e) => (
+						<div class="bg-[#f1ece8] p-6 rounded-xl shadow hover:shadow-2xl transition transform hover:-translate-y-2">
+							<img
+								src={e.imagen}
+								class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-white shadow"
+							/>
+
+							<h3 class="font-bold text-lg">{e.nombre}</h3>
+
+							<p class="text-sm text-gray-600">{e.rol}</p>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+		<!-- UBICACIÓN -->
+		<section class="py-20 bg-[#f8f5f2] text-center">
+			<h2 class="text-3xl font-bold mb-6 text-[#6b4f3b]">
+				{ubicacion.titulo}
+			</h2>
+
+			<div class="max-w-4xl mx-auto px-4">
+				<iframe
+					src={ubicacion.mapa}
+					width="100%"
+					height="400"
+					class="rounded-xl shadow-lg border-2 border-[#e5ddd5]"
+					loading="lazy"
+				>
+				</iframe>
+			</div>
+
+			<p class="mt-4 text-gray-600">
+				Dirección: {ubicacion.direccion}
+			</p>
+		</section>
+
+		<!-- CONTACTO -->
+		<section id="contacto" class="py-20 text-center bg-white">
+			<h2 class="text-3xl font-bold mb-6 text-[#6b4f3b]">
+				{contacto.titulo}
+			</h2>
+
+			<p class="mb-6 text-gray-600">
+				{contacto.descripcion}
+			</p>
+
+			<!-- BOTONES -->
+			<div
+				class="flex flex-col md:flex-row justify-center items-center gap-4"
+			>
+				<!-- WHATSAPP -->
+				<a
+					href={`https://wa.me/${contacto.whatsapp}`}
+					class="border-2 border-[#6b4f3b] text-[#6b4f3b] px-6 py-3 rounded-lg hover:bg-[#6b4f3b] hover:text-white transition transform hover:scale-105"
+				>
+					WhatsApp
+				</a>
+
+				<!-- CORREO -->
+				<a
+					href={`mailto:${contacto.correo}`}
+					class="border-2 border-[#6b4f3b] text-[#6b4f3b] px-6 py-3 rounded-lg hover:bg-[#6b4f3b] hover:text-white transition transform hover:scale-105"
+				>
+					Enviar correo
+				</a>
+			</div>
+
+			<!-- CORREO VISIBLE -->
+			<p class="mt-6 text-gray-500">
+				o escríbenos a:
+				<span class="font-semibold">
+					{contacto.correoVisible}
+				</span>
+			</p>
+		</section>
+	</body>
+</html>

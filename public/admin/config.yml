@@ -1,0 +1,95 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+
+  # HERO
+  - name: "hero"
+    label: "Hero"
+    files:
+      - file: "src/content/hero.json"
+        label: "Sección Hero"
+        name: "hero"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Descripción", name: "descripcion", widget: "text" }
+          - { label: "Imagen", name: "imagen", widget: "image" }
+
+  # SERVICIOS
+  - name: "servicios"
+    label: "Servicios"
+    files:
+      - file: "src/content/servicios.json"
+        label: "Servicios"
+        name: "servicios"
+        fields:
+          - label: "Servicios"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Imagen", name: "imagen", widget: "image" }
+
+  # NOSOTROS
+  - name: "nosotros"
+    label: "Nosotros"
+    files:
+      - file: "src/content/nosotros.json"
+        label: "Sección Nosotros"
+        name: "nosotros"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Descripción", name: "descripcion", widget: "text" }
+          - { label: "Imagen", name: "imagen", widget: "image" }
+          - label: "Características"
+            name: "caracteristicas"
+            widget: "list"
+            fields:
+              - { label: "Texto", name: "texto", widget: "string" }
+
+  # EQUIPO
+  - name: "equipo"
+    label: "Equipo"
+    files:
+      - file: "src/content/equipo.json"
+        label: "Equipo"
+        name: "equipo"
+        fields:
+          - label: "Personas"
+            name: "personas"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - { label: "Puesto", name: "puesto", widget: "string" }
+              - { label: "Imagen", name: "imagen", widget: "image" }
+
+  # UBICACIÓN
+  - name: "ubicacion"
+    label: "Ubicación"
+    files:
+      - file: "src/content/ubicacion.json"
+        label: "Ubicación"
+        name: "ubicacion"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Mapa (URL embed)", name: "mapa", widget: "string" }
+          - { label: "Dirección", name: "direccion", widget: "string" }
+
+  # CONTACTO
+  - name: "contacto"
+    label: "Contacto"
+    files:
+      - file: "src/content/contacto.json"
+        label: "Contacto"
+        name: "contacto"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Descripción", name: "descripcion", widget: "text" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "Correo", name: "correo", widget: "string" }
+          - { label: "Correo visible", name: "correoVisible", widget: "string" }
