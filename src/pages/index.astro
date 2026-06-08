@@ -9,6 +9,7 @@ import nosotros from "../content/nosotros.json";
 import ubicacion from "../content/ubicacion.json";
 import contacto from "../content/contacto.json";
 
+const personas = equipo.personas;
 if (typeof window !== "undefined") {
 	setTimeout(() => {
 		AOS.init({
@@ -149,7 +150,7 @@ if (typeof window !== "undefined") {
 					</p>
 
 					<ul class="space-y-2 text-gray-700">
-						{nosotros.valores.map((v) => <li>✔ {v}</li>)}
+						{nosotros.caracteristicas.map((c) => <li>✔ {c.texto}</li>)}
 					</ul>
 				</div>
 			</div>
@@ -162,7 +163,7 @@ if (typeof window !== "undefined") {
 
 			<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
 				{
-					equipo.map((e) => (
+					personas.map((e) => (
 						<div class="bg-[#f1ece8] p-6 rounded-xl shadow hover:shadow-2xl transition transform hover:-translate-y-2">
 							<img
 								src={e.imagen}

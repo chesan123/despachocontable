@@ -2,9 +2,15 @@
   "titulo": "Sobre Nosotros",
   "descripcion": "Confianza, claridad y crecimiento financiero para nuestros clientes.",
   "imagen": "/images/2.jpg",
-  "valores": [
-    "Atención personalizada",
-    "Cumplimiento fiscal",
-    "Transparencia total"
+  "caracteristicas": [
+    {
+      "texto": "Atención personalizada"
+    },
+    {
+      "texto": "Cumplimiento fiscal"
+    },
+    {
+      "texto": "Transparencia total"
+    }
   ]
 }

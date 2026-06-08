@@ -1,12 +1,14 @@
-[
-  {
-    "nombre": "C.P. Ana García",
-    "puesto": "Especialista en impuestos",
-    "imagen": "https://via.placeholder.com/150"
-  },
-  {
-    "nombre": "C.P. Luis Pérez",
-    "puesto": "Contabilidad empresarial",
-    "imagen": "https://via.placeholder.com/150"
-  }
-]
+{
+  "personas": [
+    {
+      "nombre": "C.P. Ana García",
+      "puesto": "Especialista en impuestos",
+      "imagen": "https://via.placeholder.com/150"
+    },
+    {
+      "nombre": "C.P. Luis Pérez",
+      "puesto": "Contabilidad empresarial",
+      "imagen": "https://via.placeholder.com/150"
+    }
+  ]
+}
