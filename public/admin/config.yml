@@ -68,23 +68,37 @@ collections:
               - { label: "Puesto", name: "puesto", widget: "string" }
               - { label: "Imagen", name: "imagen", widget: "image" }
 
- # UBICACIÓN
-- name: "ubicacion"
-  label: "Ubicación"
-  files:
-    - file: "src/content/ubicacion.json"
-      label: "Ubicación"
-      name: "ubicacion"
-      fields:
-        - { label: "Título", name: "titulo", widget: "string" }
+  # UBICACIÓN
+  - name: "ubicacion"
+    label: "Ubicación"
+    files:
+      - file: "src/content/ubicacion.json"
+        label: "Ubicación"
+        name: "ubicacion"
+        fields:
+          - { label: "Título", name: "titulo", widget: "string" }
 
-        - label: "Ubicaciones"
-          name: "ubicaciones"
+          - label: "Ubicaciones"
+            name: "ubicaciones"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Mapa (URL embed)", name: "mapa", widget: "string" }
+              - { label: "Dirección", name: "direccion", widget: "string" }
+# TRAMITES
+- name: "tramites"
+  label: "Trámites"
+  files:
+    - file: "src/content/tramites.json"
+      label: "Trámites"
+      name: "tramites"
+      fields:
+        - label: "Items"
+          name: "items"
           widget: "list"
           fields:
             - { label: "Título", name: "titulo", widget: "string" }
-            - { label: "Mapa (URL embed)", name: "mapa", widget: "string" }
-            - { label: "Dirección", name: "direccion", widget: "string" }
+            - { label: "Descripción", name: "descripcion", widget: "text" }
   # CONTACTO
   - name: "contacto"
     label: "Contacto"

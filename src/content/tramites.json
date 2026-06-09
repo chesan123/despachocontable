@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "titulo": "Inscripción al RFC",
+      "descripcion": "El Registro Federal de Contribuyentes (RFC) es necesario..."
+    },
+    {
+      "titulo": "Declaración anual",
+      "descripcion": "Es un reporte que deben presentar..."
+    }
+  ]
+}
