@@ -42,8 +42,7 @@ if (typeof window !== "undefined") {
 				</h1>
 
 				<!-- BOTÓN MOBILE -->
-				<button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
-
+				<button id="menuBtn" class="md:hidden text-2xl">☰</button>
 				<!-- LINKS DESKTOP -->
 				<div
 					class="hidden md:flex items-center gap-8 font-medium text-gray-700"
@@ -70,7 +69,10 @@ if (typeof window !== "undefined") {
 			</div>
 
 			<!-- MENÚ MOBILE -->
-			<div id="mobileMenu" class="hidden flex flex-col gap-4 p-4 bg-white md:hidden">
+			<div
+				id="mobileMenu"
+				class="hidden flex flex-col gap-4 p-4 bg-white md:hidden"
+			>
 				<a href="#servicios" onclick="toggleMenu()">Servicios</a>
 				<a href="#nosotros" onclick="toggleMenu()">Nosotros</a>
 				<a href="#contacto" onclick="toggleMenu()">Contacto</a>
@@ -268,15 +270,23 @@ if (typeof window !== "undefined") {
 		</footer>
 
 		<script>
-			function toggleMenu() {
-				const menu = document.getElementById("mobileMenu");
-				if (menu) {
-					menu.classList.toggle("hidden");
-				}
-			}
-
 			declare const lucide: any;
 			lucide.createIcons();
+		</script>
+
+		<script is:inline>
+			const btn = document.getElementById("menuBtn");
+			const menu = document.getElementById("mobileMenu");
+
+			btn?.addEventListener("click", () => {
+				menu?.classList.toggle("hidden");
+			});
+
+			document.querySelectorAll("#mobileMenu a").forEach((link) => {
+				link.addEventListener("click", () => {
+					menu?.classList.add("hidden");
+				});
+			});
 		</script>
 	</body>
 </html>
