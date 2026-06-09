@@ -77,7 +77,6 @@ collections:
         name: "ubicacion"
         fields:
           - { label: "Título", name: "titulo", widget: "string" }
-
           - label: "Ubicaciones"
             name: "ubicaciones"
             widget: "list"
@@ -85,21 +84,23 @@ collections:
               - { label: "Título", name: "titulo", widget: "string" }
               - { label: "Mapa (URL embed)", name: "mapa", widget: "string" }
               - { label: "Dirección", name: "direccion", widget: "string" }
-# TRAMITES
-- name: "tramites"
-  label: "Trámites"
-  files:
-    - file: "src/content/tramites.json"
-      label: "Trámites"
-      name: "tramites"
-      fields:
-        - label: "Items"
-          name: "items"
-          widget: "list"
-          fields:
-            - { label: "Título", name: "titulo", widget: "string" }
-            - { label: "Descripción", name: "descripcion", widget: "text" }
-  # CONTACTO
+
+  # TRAMITES ✅ (YA BIEN)
+  - name: "tramites"
+    label: "Trámites"
+    files:
+      - file: "src/content/tramites.json"
+        label: "Trámites"
+        name: "tramites"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+
+  # CONTACTO ✅ (YA BIEN)
   - name: "contacto"
     label: "Contacto"
     files:
